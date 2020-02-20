@@ -14,4 +14,4 @@ spring:
     port: 6379
   jpa:
     show-sql: true
-test: 4
+test: 5
