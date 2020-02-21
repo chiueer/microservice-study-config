@@ -4,7 +4,7 @@ eureka:
     prefer-ip-address: true
   client:
     service-url:
-      defaultZone: http://user:${REGISTRY_SERVER_PASSWORD:password}@registry:8761/eureka/
+      defaultZone: http://admin:${REGISTRY_SERVER_PASSWORD:admin}@registry:8761/eureka/
 
 hystrix:
   command:
@@ -29,9 +29,9 @@ spring:
     scheduled:
       skip-pattern: "^org.*HystrixStreamTask$"
   security:
-  oauth2:
-    resource:
-      user-info-uri: http://${authserver.hostname}:${authserver.port}${authserver.contextPath}/current
+      oauth2:
+        resource:
+          user-info-uri: http://${authserver.hostname}:${authserver.port}${authserver.contextPath}/current
 
 authserver:
     hostname: auth-service
